@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liusure.springboot.dao.EmployeeMapper" >
+  <resultMap id="BaseResultMap" type="com.liusure.springboot.entity.Employee" >
+    <id column="employee_id" property="employeeId" jdbcType="VARCHAR" />
+    <result column="vip_users_id" property="vipUsersId" jdbcType="VARCHAR" />
+    <result column="employee_number" property="employeeNumber" jdbcType="VARCHAR" />
+    <result column="employee_title" property="employeeTitle" jdbcType="VARCHAR" />
+    <result column="employee_name" property="employeeName" jdbcType="VARCHAR" />
+    <result column="employee_sex" property="employeeSex" jdbcType="CHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="hiredate" property="hiredate" jdbcType="TIMESTAMP" />
+    <result column="id_card_image1" property="idCardImage1" jdbcType="VARCHAR" />
+    <result column="id_card_image2" property="idCardImage2" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="userpwd" property="userpwd" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="telphone" property="telphone" jdbcType="VARCHAR" />
+    <result column="employee_status" property="employeeStatus" jdbcType="TINYINT" />
+    <result column="location_id" property="locationId" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="creater_id" property="createrId" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="updater_id" property="updaterId" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="delete_flg" property="deleteFlg" jdbcType="CHAR" />
+    <result column="employee_type" property="employeeType" jdbcType="TINYINT" />
+    <result column="active_status" property="activeStatus" jdbcType="TINYINT" />
+    <result column="employee_no" property="employeeNo" jdbcType="VARCHAR" />
+    <result column="employee_birthday" property="employeeBirthday" jdbcType="TIMESTAMP" />
+    <result column="is_login" property="isLogin" jdbcType="TINYINT" />
+    <result column="is_changedname" property="isChangedname" jdbcType="TINYINT" />
+    <result column="is_remind" property="isRemind" jdbcType="TINYINT" />
+    <result column="latest_time" property="latestTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    employee_id, vip_users_id, employee_number, employee_title, employee_name, employee_sex, 
+    id_card, hiredate, id_card_image1, id_card_image2, username, userpwd, mobile, email, 
+    telphone, employee_status, location_id, address, remark, creater_id, create_time, 
+    updater_id, update_time, delete_flg, employee_type, active_status, employee_no, employee_birthday, 
+    is_login, is_changedname, is_remind, latest_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from employee
+    where employee_id = #{employeeId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from employee
+    where employee_id = #{employeeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.liusure.springboot.entity.Employee" >
+    insert into employee (employee_id, vip_users_id, employee_number, 
+      employee_title, employee_name, employee_sex, 
+      id_card, hiredate, id_card_image1, 
+      id_card_image2, username, userpwd, 
+      mobile, email, telphone, 
+      employee_status, location_id, address, 
+      remark, creater_id, create_time, 
+      updater_id, update_time, delete_flg, 
+      employee_type, active_status, employee_no, 
+      employee_birthday, is_login, is_changedname, 
+      is_remind, latest_time)
+    values (#{employeeId,jdbcType=VARCHAR}, #{vipUsersId,jdbcType=VARCHAR}, #{employeeNumber,jdbcType=VARCHAR}, 
+      #{employeeTitle,jdbcType=VARCHAR}, #{employeeName,jdbcType=VARCHAR}, #{employeeSex,jdbcType=CHAR}, 
+      #{idCard,jdbcType=VARCHAR}, #{hiredate,jdbcType=TIMESTAMP}, #{idCardImage1,jdbcType=VARCHAR}, 
+      #{idCardImage2,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{userpwd,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{telphone,jdbcType=VARCHAR}, 
+      #{employeeStatus,jdbcType=TINYINT}, #{locationId,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{createrId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updaterId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{deleteFlg,jdbcType=CHAR}, 
+      #{employeeType,jdbcType=TINYINT}, #{activeStatus,jdbcType=TINYINT}, #{employeeNo,jdbcType=VARCHAR}, 
+      #{employeeBirthday,jdbcType=TIMESTAMP}, #{isLogin,jdbcType=TINYINT}, #{isChangedname,jdbcType=TINYINT}, 
+      #{isRemind,jdbcType=TINYINT}, #{latestTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.liusure.springboot.entity.Employee" >
+    insert into employee
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="employeeId != null" >
+        employee_id,
+      </if>
+      <if test="vipUsersId != null" >
+        vip_users_id,
+      </if>
+      <if test="employeeNumber != null" >
+        employee_number,
+      </if>
+      <if test="employeeTitle != null" >
+        employee_title,
+      </if>
+      <if test="employeeName != null" >
+        employee_name,
+      </if>
+      <if test="employeeSex != null" >
+        employee_sex,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="hiredate != null" >
+        hiredate,
+      </if>
+      <if test="idCardImage1 != null" >
+        id_card_image1,
+      </if>
+      <if test="idCardImage2 != null" >
+        id_card_image2,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="userpwd != null" >
+        userpwd,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="telphone != null" >
+        telphone,
+      </if>
+      <if test="employeeStatus != null" >
+        employee_status,
+      </if>
+      <if test="locationId != null" >
+        location_id,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="createrId != null" >
+        creater_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updaterId != null" >
+        updater_id,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="deleteFlg != null" >
+        delete_flg,
+      </if>
+      <if test="employeeType != null" >
+        employee_type,
+      </if>
+      <if test="activeStatus != null" >
+        active_status,
+      </if>
+      <if test="employeeNo != null" >
+        employee_no,
+      </if>
+      <if test="employeeBirthday != null" >
+        employee_birthday,
+      </if>
+      <if test="isLogin != null" >
+        is_login,
+      </if>
+      <if test="isChangedname != null" >
+        is_changedname,
+      </if>
+      <if test="isRemind != null" >
+        is_remind,
+      </if>
+      <if test="latestTime != null" >
+        latest_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="employeeId != null" >
+        #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="vipUsersId != null" >
+        #{vipUsersId,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeNumber != null" >
+        #{employeeNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeTitle != null" >
+        #{employeeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeName != null" >
+        #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeSex != null" >
+        #{employeeSex,jdbcType=CHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="hiredate != null" >
+        #{hiredate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCardImage1 != null" >
+        #{idCardImage1,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardImage2 != null" >
+        #{idCardImage2,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null" >
+        #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="telphone != null" >
+        #{telphone,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeStatus != null" >
+        #{employeeStatus,jdbcType=TINYINT},
+      </if>
+      <if test="locationId != null" >
+        #{locationId,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createrId != null" >
+        #{createrId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updaterId != null" >
+        #{updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleteFlg != null" >
+        #{deleteFlg,jdbcType=CHAR},
+      </if>
+      <if test="employeeType != null" >
+        #{employeeType,jdbcType=TINYINT},
+      </if>
+      <if test="activeStatus != null" >
+        #{activeStatus,jdbcType=TINYINT},
+      </if>
+      <if test="employeeNo != null" >
+        #{employeeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeBirthday != null" >
+        #{employeeBirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isLogin != null" >
+        #{isLogin,jdbcType=TINYINT},
+      </if>
+      <if test="isChangedname != null" >
+        #{isChangedname,jdbcType=TINYINT},
+      </if>
+      <if test="isRemind != null" >
+        #{isRemind,jdbcType=TINYINT},
+      </if>
+      <if test="latestTime != null" >
+        #{latestTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.liusure.springboot.entity.Employee" >
+    update employee
+    <set >
+      <if test="vipUsersId != null" >
+        vip_users_id = #{vipUsersId,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeNumber != null" >
+        employee_number = #{employeeNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeTitle != null" >
+        employee_title = #{employeeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeName != null" >
+        employee_name = #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeSex != null" >
+        employee_sex = #{employeeSex,jdbcType=CHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="hiredate != null" >
+        hiredate = #{hiredate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCardImage1 != null" >
+        id_card_image1 = #{idCardImage1,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardImage2 != null" >
+        id_card_image2 = #{idCardImage2,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null" >
+        userpwd = #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="telphone != null" >
+        telphone = #{telphone,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeStatus != null" >
+        employee_status = #{employeeStatus,jdbcType=TINYINT},
+      </if>
+      <if test="locationId != null" >
+        location_id = #{locationId,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createrId != null" >
+        creater_id = #{createrId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updaterId != null" >
+        updater_id = #{updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleteFlg != null" >
+        delete_flg = #{deleteFlg,jdbcType=CHAR},
+      </if>
+      <if test="employeeType != null" >
+        employee_type = #{employeeType,jdbcType=TINYINT},
+      </if>
+      <if test="activeStatus != null" >
+        active_status = #{activeStatus,jdbcType=TINYINT},
+      </if>
+      <if test="employeeNo != null" >
+        employee_no = #{employeeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeBirthday != null" >
+        employee_birthday = #{employeeBirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isLogin != null" >
+        is_login = #{isLogin,jdbcType=TINYINT},
+      </if>
+      <if test="isChangedname != null" >
+        is_changedname = #{isChangedname,jdbcType=TINYINT},
+      </if>
+      <if test="isRemind != null" >
+        is_remind = #{isRemind,jdbcType=TINYINT},
+      </if>
+      <if test="latestTime != null" >
+        latest_time = #{latestTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where employee_id = #{employeeId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.liusure.springboot.entity.Employee" >
+    update employee
+    set vip_users_id = #{vipUsersId,jdbcType=VARCHAR},
+      employee_number = #{employeeNumber,jdbcType=VARCHAR},
+      employee_title = #{employeeTitle,jdbcType=VARCHAR},
+      employee_name = #{employeeName,jdbcType=VARCHAR},
+      employee_sex = #{employeeSex,jdbcType=CHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      hiredate = #{hiredate,jdbcType=TIMESTAMP},
+      id_card_image1 = #{idCardImage1,jdbcType=VARCHAR},
+      id_card_image2 = #{idCardImage2,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      userpwd = #{userpwd,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      telphone = #{telphone,jdbcType=VARCHAR},
+      employee_status = #{employeeStatus,jdbcType=TINYINT},
+      location_id = #{locationId,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      creater_id = #{createrId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      updater_id = #{updaterId,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      delete_flg = #{deleteFlg,jdbcType=CHAR},
+      employee_type = #{employeeType,jdbcType=TINYINT},
+      active_status = #{activeStatus,jdbcType=TINYINT},
+      employee_no = #{employeeNo,jdbcType=VARCHAR},
+      employee_birthday = #{employeeBirthday,jdbcType=TIMESTAMP},
+      is_login = #{isLogin,jdbcType=TINYINT},
+      is_changedname = #{isChangedname,jdbcType=TINYINT},
+      is_remind = #{isRemind,jdbcType=TINYINT},
+      latest_time = #{latestTime,jdbcType=TIMESTAMP}
+    where employee_id = #{employeeId,jdbcType=VARCHAR}
+  </update>
+</mapper>
