@@ -18,6 +18,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    // 接口访问地址：测试地址：http://localhost:8080/my/getuserByid
     @RequestMapping("/getuserByid")
     @ResponseBody
     public void getUserInfo(){
