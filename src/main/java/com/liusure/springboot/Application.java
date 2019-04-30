@@ -66,7 +66,8 @@ class Application {
         System.out.println("********************springBoot启动开始");
         SpringApplication.run(Application.class,args);
         System.out.println("********************springBoot启动成功");
-        logger.error("已经启动成功！");
+        logger.error("已经启动成功1！");
+        logger.error("已经启动成功2！");
     }
 
 }
