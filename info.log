@@ -34,3 +34,34 @@
 2019-04-29 22:28:06  [ http-nio-8086-exec-1:636752 ] - [ ERROR ]  这就是error日志
 2019-04-29 22:28:06  [ http-nio-8086-exec-1:636752 ] - [ ERROR ]  这是error日志
 2019-04-29 22:28:06  [ http-nio-8086-exec-1:636753 ] - [ INFO ]  这是info日志
+2019-04-29 22:29:00  [ main:0 ] - [ INFO ]  Starting Application on 01C910801435739 with PID 34616 (started by 01435739 in E:\liushuo\我自己的项目练习\idea_project_workspace\mySpringBootDemo)
+2019-04-29 22:29:00  [ main:4 ] - [ INFO ]  No active profile set, falling back to default profiles: default
+2019-04-29 22:29:00  [ main:70 ] - [ INFO ]  Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6c2ed0cd: startup date [Mon Apr 29 22:29:00 CST 2019]; root of context hierarchy
+2019-04-29 22:29:00  [ background-preinit:274 ] - [ INFO ]  HV000001: Hibernate Validator 5.2.4.Final
+2019-04-29 22:29:07  [ main:6989 ] - [ INFO ]  Bean 'application' of type [class com.liusure.springboot.Application$$EnhancerBySpringCGLIB$$528b44e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-29 22:29:07  [ main:7201 ] - [ INFO ]  Bean 'dataSource' of type [class org.apache.tomcat.jdbc.pool.DataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-29 22:29:07  [ main:7409 ] - [ INFO ]  Bean 'sqlSessionFactoryBean' of type [class org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-29 22:29:07  [ main:7440 ] - [ INFO ]  Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [class org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-29 22:29:07  [ main:7451 ] - [ INFO ]  Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [class org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$a19ff920] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-29 22:29:07  [ main:7462 ] - [ INFO ]  Bean 'sqlSessionTemplate' of type [class org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-29 22:29:07  [ main:7463 ] - [ INFO ]  Bean 'innerOrgMapper' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-29 22:29:07  [ main:7464 ] - [ INFO ]  Bean 'employeeMapper' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-29 22:29:07  [ main:7465 ] - [ INFO ]  Bean 'cspOrderMapper' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-29 22:29:07  [ main:7489 ] - [ INFO ]  Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6ecba7f0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-29 22:29:08  [ main:8606 ] - [ INFO ]  Tomcat initialized with port(s): 8086 (http)
+2019-04-29 22:29:09  [ localhost-startStop-1:8873 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 8807 ms
+2019-04-29 22:29:09  [ localhost-startStop-1:9234 ] - [ INFO ]  Mapping servlet: 'dispatcherServlet' to [/]
+2019-04-29 22:29:09  [ localhost-startStop-1:9237 ] - [ INFO ]  Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-04-29 22:29:09  [ localhost-startStop-1:9238 ] - [ INFO ]  Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-04-29 22:29:09  [ localhost-startStop-1:9238 ] - [ INFO ]  Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-04-29 22:29:09  [ localhost-startStop-1:9238 ] - [ INFO ]  Mapping filter: 'requestContextFilter' to: [/*]
+2019-04-29 22:29:09  [ main:9482 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6c2ed0cd: startup date [Mon Apr 29 22:29:00 CST 2019]; root of context hierarchy
+2019-04-29 22:29:09  [ main:9538 ] - [ INFO ]  Mapped "{[/my/getuserByid]}" onto public void com.liusure.springboot.controller.UserController.getUserInfo()
+2019-04-29 22:29:09  [ main:9540 ] - [ INFO ]  Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-04-29 22:29:09  [ main:9541 ] - [ INFO ]  Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-04-29 22:29:09  [ main:9570 ] - [ INFO ]  Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-04-29 22:29:09  [ main:9570 ] - [ INFO ]  Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-04-29 22:29:09  [ main:9605 ] - [ INFO ]  Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-04-29 22:29:10  [ main:9907 ] - [ INFO ]  Registering beans for JMX exposure on startup
+2019-04-29 22:29:10  [ main:9977 ] - [ INFO ]  Tomcat started on port(s): 8086 (http)
+2019-04-29 22:29:10  [ main:9981 ] - [ INFO ]  Started Application in 10.458 seconds (JVM running for 11.501)
